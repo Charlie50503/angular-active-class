@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+/* 全域 */
+.d-none {
+  display: none;
+}
+
+.text-primary {
+  color: rgb(103, 48, 167);
+}
+
+.text-secondary {
+  color: rgb(71, 206, 9);
+}
+
+.fz-bold {
+  font-weight: bold;
+}

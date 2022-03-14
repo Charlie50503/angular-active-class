@@ -1,0 +1,14 @@
+.active-class-component-wrap {
+  border: 1px solid #000;
+  padding: 50px;
+  background: #ccc;
+}
+.div1 {
+  background: rgb(228, 96, 96);
+}
+.div2 {
+  background: rgb(228, 55, 55);
+}
+.div3 {
+  background: rgb(235, 30, 30);
+}

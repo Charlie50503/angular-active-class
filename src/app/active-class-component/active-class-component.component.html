@@ -1,0 +1,78 @@
+<div class="active-class-component-wrap">
+  <h1>active-class 組件</h1>
+  <button (click)="isShow()">顯示控制</button>
+  <button (click)="isChangeColorPrimary()">顏色1</button>
+  <button (click)="isChangeColorSecondary()">顏色2</button>
+  <button (click)="isRemoveColor()">消除顏色</button>
+  <button (click)="setStatus1()">setStatus1</button>
+  <button (click)="setStatus2()">setStatus2</button>
+  <button (click)="changeStr()">changeStr</button>
+  <!-- ngClass用string -->
+  <div [ngClass]="'first second'">ngClass用string</div>
+  <!-- ngClass用array -->
+  <div [ngClass]="['first', 'second']">ngClass用array</div>
+  <!-- ngClass用object -->
+  <div [ngClass]="{ first: true, second: true, third: false }">
+    ngClass用object
+  </div>
+  <!-- ngClass用object 配字串 -->
+  <div [ngClass]="{ 'class1 class2 class3': true }">test</div>
+  <!-- ngClass用object 配動態切換 -->
+  <div [ngClass]="{ 'd-none': isActive }">顯示與不顯示</div>
+  <div [ngClass]="{ 'd-none': returnIsActive() }">
+    顯示與不顯示 用 function return
+  </div>
+  <!-- ngClass用object 配動態切換 -->
+  <div [ngClass]="{ first: true, second: true, 'd-none': isActive }">
+    顯示與不顯示
+  </div>
+  <!-- 用function回傳字串達到切換 -->
+  使用ngClass的時候可以與class共存
+  <div class="fz-bold" [ngClass]="returnActiveColorByString()">
+    測試顏色切換
+  </div>
+  <div class="fz-bold" [ngClass]="returnActiveColorByArray()">測試顏色切換</div>
+  <div class="fz-bold" [ngClass]="returnActiveColorByObject()">
+    測試顏色切換
+  </div>
+  <!-- <div class="fz-bold" [ngClass]="returnActiveColor()">測試顏色切換</div> -->
+
+  <hr />
+  <!-- [class]獨有寫法 -->
+  <div [class.first]="true">[class]獨有寫法</div>
+  <!-- [class]獨有寫法 -->
+  <div [class.first]="isActive">[class]獨有寫法 配合切換(無效寫法)</div>
+  <div [class.first]="returnIsActive()">[class]獨有寫法 只有第一次會改變值</div>
+  <!-- [class]用string -->
+  <div [class]="'first second'">[class]用string</div>
+  <!-- [class]用array -->
+  <div [class]="['first', 'second']">[class]用array</div>
+  <!-- [class]用object -->
+  <div [class]="{ first: true, second: true, third: false }">
+    [class]用object
+  </div>
+  <!-- [class]用object 配字串 -->
+  <!-- <div [class]="{ 'class1 class2 class3': true }">
+      [class]用object 配字串(不正確寫法)
+    </div> -->
+  <!-- [class]用object 配動態切換 -->
+  <div [class]="{ 'd-none': isActive }">[class]用object 配動態切換</div>
+  <!-- [class]用object 配動態切換 -->
+  <div [class]="{ first: true, second: true, 'd-none': isActive }">
+    [class]用object 配動態切換
+  </div>
+  <!-- 用function回傳字串達到切換 -->
+  使用[class]的時候可以與class共存
+  <div class="fz-bold" [class]="returnActiveColorByString()">測試顏色切換</div>
+  <div class="fz-bold" [class]="returnActiveColorByArray()">測試顏色切換</div>
+  <div class="fz-bold" [class]="returnActiveColorByObject()">測試顏色切換</div>
+
+  <!-- <div :class="function()">[class]獨有寫法</div> -->
+  <div class="fz-bold" class="{{ returnIsStr() }}">returnIsBNone</div>
+
+  <!-- <div :class="function()">[class]獨有寫法</div> -->
+  <div class="fz-bold" class="{{ returnIsStr() }}">returnIsBNone</div>
+  <div class="fz-bold" class="{{ activeReturnNewStr() }}">添加OutAngular</div>
+  <div class="fz-bold" [class]="myNewStr">複製變量值，使用[class]來接</div>
+  <div class="fz-bold" [ngClass]="myNewStr">複製變量值，使用ngClass來接</div>
+</div>
